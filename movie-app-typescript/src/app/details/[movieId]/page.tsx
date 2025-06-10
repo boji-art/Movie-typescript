@@ -1,7 +1,12 @@
-import { MovieCarousel } from "@/components/Carousel";
+import { MovieDetails } from "@/components/Details/MovieDetails";
 
-const DetailsPage = () => {
-  return <div>gjkfmkfmgf</div>;
+const Page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
+  const { movieId } = await params;
+
+  return (
+    <div>
+      <MovieDetails movieId={Number(movieId)} />
+    </div>
+  );
 };
-
-export default DetailsPage;
+export default Page;

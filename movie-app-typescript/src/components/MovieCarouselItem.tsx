@@ -1,19 +1,21 @@
-import { Movie } from "@/types";
-import { Link, StarIcon } from "lucide-react";
+import { StarIcon } from "lucide-react";
+import Link from "next/link";
+
 import { MovieTrailer } from "./MovieTrailer";
+import { Movie } from "@/types";
+
 type MovieCardProps = {
   movie: Movie;
 };
-export const MovieCarouselItem = ({ movie }: MovieCardProps) => {
-  console.log("aaaaaaaa", movie);
 
+export const MovieCarouselItem = ({ movie }: MovieCardProps) => {
   return (
     <div className="w-full ">
-      <div className=" md:flex md:relative max-w-[1280px]">
+      <div className=" md:flex md:relative  max-w-[1280px]">
         <Link href={`/details/${movie.id}`}>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-            className="h-[246px]  md:h-[600px] w-full object-cover lg:[1500px ]"
+            className="h-[246px]  md:h-[600px] w-full object-cover lg:[1500px]"
           />
         </Link>
         <div className="w-[375px] h-[264px] p-2 md:absolute  md:w-[404px] md:h-[264px]  md:py-[140px] md:px-[60px]">

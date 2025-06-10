@@ -37,7 +37,7 @@ export const MovieCarousel = () => {
       }
     >
       <CarouselContent>
-        {/* {loading && <HomePageLoading />} */}
+        {loading && <HomePageLoading />}
         {nowPlaying?.slice(0, 5).map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">

@@ -1,23 +1,16 @@
+import { CreditsType } from "@/types";
 
-
-export const Writer = ({ writerId }:{writerId:}) => {
-  const directorList = writerId?.crew?.filter(
-    (person) => person.department === "Directing"
+export const Credits = ({ credits }: { credits: CreditsType }) => {
+  const directorList = credits?.crew?.filter(
+    (person) => person.known_for_department === "Directing"
   );
-  const writerList = writerId?.crew?.filter(
-    (person) => person.department === "Writing"
+  const writerList = credits?.crew?.filter(
+    (person) => person.known_for_department === "Writing"
   );
-
-
-  console.log("directorList", directorList);
-  console.log("aaaagwgagagaga", writerId);
 
   return (
     <div className="flex flex-col">
-      <div
-        className=" flex 
-        flex-row font-base h-[28px] gap-15 ml-5 py-10"
-      >
+      <div className=" flex flex-row font-base h-[28px] gap-15 ml-5 py-10">
         <span className="font-bold ">Director</span>
         {directorList?.slice(0, 3).map((director, index) => (
           <p key={index}>{director.name}</p>
@@ -31,7 +24,7 @@ export const Writer = ({ writerId }:{writerId:}) => {
       </div>
       <div className=" flex font-base h-[28px] gap-15 ">
         <span className="font-bold">Stars</span>
-        {writerId?.cast?.slice(0, 3).map((cast, index) => (
+        {credits?.cast?.slice(0, 3).map((cast, index) => (
           <p key={index}>{cast.name}</p>
         ))}
       </div>

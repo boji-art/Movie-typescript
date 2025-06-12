@@ -7,24 +7,25 @@ import { MovieCard } from "../MovieCard";
 import { getMoreLikeThis } from "@/utils/getMoreLikeThis";
 import { Movie } from "@/types";
 
-export const MoreLikeThis = ({ movieId}:{movieId:string}) => {
+type MoreLikeThisProps = {
+  movieId: number;
+};
+
+export const MoreLikeThis = ({ movieId }: MoreLikeThisProps) => {
   const [moreLikeThis, setMoreLikeThis] = useState<Movie[]>([]);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!movieId) return;
     const getMoreLike = async () => {
-      
-        if (!movieId) return;
       const response = await getMoreLikeThis(movieId);
-
+      if (!response) return;
       setMoreLikeThis(response?.results);
     };
     getMoreLike();
     setLoading(false);
   }, [movieId]);
-  console.log("similiar", movieId);
 
-  
   return (
     <div className="px-1">
       <div className="flex justify-between  h-[36px] w-full">
@@ -36,12 +37,14 @@ export const MoreLikeThis = ({ movieId}:{movieId:string}) => {
         </Link>
       </div>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5">
-        {loading && moreLikeThis?.slice(0, 5).map((movie) => {
-          return <MovieCartLoading key={movie.id}  />;
-        })}
-        {!loading && moreLikeThis?.slice(0, 5).map((movie) => {
-          return <MovieCard key={movie.id} movie={movie} />;
-        })}
+        {loading &&
+          moreLikeThis?.slice(0, 5).map((movie) => {
+            return <MovieCartLoading key={movie.id} />;
+          })}
+        {!loading &&
+          moreLikeThis?.slice(0, 5).map((movie) => {
+            return <MovieCard key={movie.id} movie={movie} />;
+          })}
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
-import { MovieDetails } from "@/types";
+import { Movie } from "@/types";
 import { MovieTrailer } from "../MovieTrailer";
 
-export const Trailer = ({ movie }: { movie: MovieDetails }) => {
-  console.log({ movie });
+type TrailerProps = {
+  movie: Movie;
+};
+
+export const Trailer = ({ movie }: TrailerProps) => {
   return (
     <div className="flex  flex-col-reverse  md:flex-row md:gap-3 gap-2">
       <img
@@ -15,7 +18,7 @@ export const Trailer = ({ movie }: { movie: MovieDetails }) => {
           className="md:h-[428px] md:[760px]"
         />
         <div className="absolute bottom-5 left-5">
-          {/* <MovieTrailer movieId={movie.id} /> */}
+          <MovieTrailer movieId={movie.id} />
         </div>
       </div>
     </div>

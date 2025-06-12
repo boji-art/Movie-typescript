@@ -1,5 +1,7 @@
 import { Film } from "lucide-react";
 import Link from "next/link";
+import { Genre1 } from "./Genre/Genre1";
+import { HeaderSearch } from "./HeaderSearch";
 
 export const Header = () => {
   return (
@@ -10,10 +12,9 @@ export const Header = () => {
         </Link>
 
         <p className="text-indigo-700 text-base font-bold">Movie Z</p>
-        {/* <Genre1 /> */}
+        <Genre1 />
         <div className=" md:flex gap-[12px]">
-
-          {/* <HeaderSearch /> */}
+          <HeaderSearch />
         </div>
 
         <div className="flex gap-3   ">

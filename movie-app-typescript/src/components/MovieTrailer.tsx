@@ -8,20 +8,11 @@ import { Button } from "./ui/button";
 import YouTube from "react-youtube";
 import { useEffect, useState } from "react";
 import { getMovieTrailer } from "@/utils/getMovieTrailer";
-import { Movie } from "@/types";
+import { MovieTrailerType } from "@/types";
 
-type MovieTrailerType = {
-  name: string;
-  key: string;
-};
+type MovieTrailerProps = { movieId: number };
 
-export const MovieTrailer = ({
-  movieId,
-  movie,
-}: {
-  movieId: number;
-  movie: Movie;
-}) => {
+export const MovieTrailer = ({ movieId }: MovieTrailerProps) => {
   const [trailer, setTrailer] = useState<MovieTrailerType[]>([]);
 
   useEffect(() => {

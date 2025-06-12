@@ -18,8 +18,8 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
         ></img>
       </Link>
       <div className="w-[158px] bg-gray-300 rounded-b-lg  md:w-[240px]">
-        <div className="flex p-2">
-          <Star className="text-yellow-300 fill-yellow-300 " />
+        <div className="flex p-2 items-center text-sm text-gray-900 dark:text-white">
+          <Star className="text-yellow-400 fill-yellow-400 " />
           <p className="w-[36] h-[16] pl-6px">
             {movie?.vote_average.toFixed(1)}
           </p>
@@ -27,9 +27,9 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
           <p className="text-gray-500">/10</p>
         </div>
         <div>
-          <p className=" h-[40px] text-[14px] font-normal pl-2">
+          <h2 className=" h-[40px] text-md font-medium pl-2">
             {movie?.title}
-          </p>
+          </h2>
         </div>
       </div>
     </div>

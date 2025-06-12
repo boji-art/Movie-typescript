@@ -44,12 +44,14 @@ export const MovieDetails = ({ movieId }: MovieDetailsProps) => {
   return (
     <div>
       <Top movie={movie} />
-      <div className="  gap-2">
+      <div className="space-y-2 gap-2 md:gap-4 md:space-y-4">
         <Trailer movie={movie} />
         <Genre movie={movie} />
         <Credits credits={credits} />
-      </div>
+      </div> 
+      <div className="mt-8 md:mt-12">
       <MoreLikeThis movieId={movie.id} />
+      </div>
     </div>
   );
 };

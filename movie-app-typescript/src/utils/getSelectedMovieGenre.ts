@@ -1,15 +1,16 @@
+import { MoviesResponse } from "@/types";
 import { config } from "./config";
 
-export const getSelectedMovieGenre = async (genreId, page) => {
+export const getSelectedMovieGenre = async (genreId:string, page:number) => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}discover/movie?language=en&with_genres=${genreId}&page=${page}`,
       config
     );
 
-    const movies = await response.json();
+    const data = await response.json();
 
-    return movies;
+    return data as MoviesResponse;
   } catch (error) {
     console.log(error);
   }

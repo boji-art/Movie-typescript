@@ -10,7 +10,6 @@ import {
 } from "./ui/carousel";
 import { HomePageLoading } from "./HomePageLoading";
 import { MovieCarouselItem } from "./MovieCarouselItem";
-
 export const MovieCarousel = () => {
   const [nowPlaying, setNowPlayingMovie] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,12 +26,12 @@ export const MovieCarousel = () => {
 
   return (
     <Carousel
-      className="relative w-full mx-auto max-w-[1280px] over-flown"
+      className="relative overflow-hidden max-w-screen rounded-lg mt-4 "
       plugins={
         [
-          // Autoplay({
-          //   delay: 5000,
-          // }),
+        //  Autoplay({
+        //   delay: 5000,
+        //  }),
         ]
       }
     >

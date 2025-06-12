@@ -9,6 +9,7 @@ import YouTube from "react-youtube";
 import { useEffect, useState } from "react";
 import { getMovieTrailer } from "@/utils/getMovieTrailer";
 import { MovieTrailerType } from "@/types";
+import {Play, PlayCircle, PlayIcon } from "lucide-react";
 
 type MovieTrailerProps = { movieId: number };
 
@@ -42,11 +43,11 @@ export const MovieTrailer = ({ movieId }: MovieTrailerProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Watch Trailer</Button>
+        <Button  className=" md:text-black md:bg-white bg-clear"> <PlayCircle />Watch Trailer</Button>
       </DialogTrigger>
       <DialogContent className="max-w-fit! bg-black border-black p-0 overflow-hidden">
         <DialogTitle></DialogTitle>
-        <div className=" w-[300px] h-[300px] md:w-[1000px] md:h-[800px]">
+        <div className=" w-[400px] h-[300px] md:w-[1000px] md:h-[800px]">
           <YouTube
             className="h-full w-full"
             videoId={movieTrailer?.key}

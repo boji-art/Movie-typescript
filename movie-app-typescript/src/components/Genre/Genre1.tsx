@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Genre, Movie, MovieDetails } from "@/types";
+import { Genre, } from "@/types";
 
 import { getGenre } from "@/utils/getGenre";
 import { ChevronDown } from "lucide-react";
@@ -31,12 +31,12 @@ export const Genre1 = ({ genreId }: { genreId: string }) => {
       <DropdownMenu>
         <DropdownMenuTrigger>
           <Button variant="outline">
-            <ChevronDown className="" />
-            <p className="">Genres</p>
+            <ChevronDown className="mr-2" />
+            <p className="  hidden font-bold">Genres</p>
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent>
+        <DropdownMenuContent className="ml-5 w-25">
           {genres.map((genre) => (
             <Link href={`/turul/${genre.id}`}>
               <DropdownMenuItem key={genre.id}>{genre?.name}</DropdownMenuItem>
@@ -44,6 +44,9 @@ export const Genre1 = ({ genreId }: { genreId: string }) => {
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
+      <h2 className="text-lg font-semibold mb-4">
+        See lists of movies by genre
+      </h2>
     </div>
   );
 };

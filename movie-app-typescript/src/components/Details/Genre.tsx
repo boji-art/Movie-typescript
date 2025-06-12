@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { Movie, MovieDetails } from "@/types";
+import { Movie } from "@/types";
 
 type MovieCardProps = {
   movie: Movie;
@@ -14,9 +14,10 @@ export const Genre = ({ movie }: MovieCardProps) => {
           <div className="flex gap-4 md:flex md:flex-row md:gap-2 md:p-3">
             <img
               src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
-              className="md:hidden w-[100px] h-[148px]"
+              className="md:hidden w-[100px] h-[148px] md:w-[330px] md:h-[530px] rounded-lg"
             />
-            <div>
+              
+            <div className="flex flex-wrap gap-2">
               {movie?.genres?.map((genre) => (
                 <Link href={`/turul/${genre.id} `} key={genre.id}>
                   <Button key={genre.id} variant="outline">
@@ -24,6 +25,7 @@ export const Genre = ({ movie }: MovieCardProps) => {
                   </Button>
                 </Link>
               ))}
+             
               <p> {movie.overview}</p>
             </div>
           </div>

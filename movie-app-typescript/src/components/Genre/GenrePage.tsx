@@ -3,7 +3,7 @@ import { PagePagination } from "@/component /Detail-movie/Pagination";
 import { MovieCard } from "@/components/MovieCard";
 import { MovieCartLoading } from "@/components/MovieCardLoading";
 import { getSelectedMovieGenre } from "@/utils/getSelectedMovieGenre";
-import { parseAsInteger, useQueryState } from "nuqs";
+import { parseAsInteger, useQueryState, useQueryStates } from "nuqs";
 import { useEffect, useState } from "react";
 import { GenreSelect } from "./GenreSelect";
 import { MoviesResponse } from "@/types";
@@ -40,7 +40,7 @@ export const GenrePage = () => {
           })}
         </div>
       </div>
-      {/* <PagePagination page={page} setPage={setPage} totalPages={totalPages} /> */}
+      <PagePagination page={page} setPage={setPage} totalPages={totalPages} />
      
     </div>
   );

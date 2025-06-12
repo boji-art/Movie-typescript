@@ -1,4 +1,4 @@
-import { Film, Mail, Phone } from "lucide-react";
+import { Facebook, Film, Instagram, Mail, Phone, Twitter, Youtube } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -25,17 +25,21 @@ export const Footer = () => {
             <Phone className="text-white w-[16px] h-[16px] " />
             <div className="flex flex-col text-white ">
               <span>Phone:</span>
-              <span>+976 (11) 123-4567</span>
+              <span >+976 (11) 123-4567</span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center  text-white text-sm gap-2 pl-13 pt-5 md:pb-25  md:items-start ">
-          <a>Follow us </a>
-          <div  className=" flex flex-col gap-2 md:flex md:flex-row md:gap-2 ">
-            <a>Facebook </a>
-            <a>Instagram</a>
-            <a>Twitter</a>
-            <a>Youtube</a>
+        <div className="flex flex-col items-center  text-white text-sm gap-2 pl-10 pt-5 md:pb-25  md:items-start ">
+          <a className="font-semibold text-lg mb-2 dark:text-white">Follow us </a>
+          <div  className=" flex flex-col gap-2 md:flex md:flex-row md:gap-2 md:pt-1 ">
+            <div  className=" flex items-center gap-2">
+             <Facebook/>
+            <Instagram/>
+            </div>
+            <div className=" flex items-center gap-2">
+            <Twitter/>
+            <Youtube/>
+            </div>
             </div>
         </div>
       </div>

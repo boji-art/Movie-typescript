@@ -62,3 +62,16 @@ export type MovieTrailerType = {
   name: string;
   key: string;
 };
+export type VideoType={
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+  official: boolean;
+  published_at: string;
+}
+export type VideoResponse= {
+  id: number;
+  results: VideoType[];
+}

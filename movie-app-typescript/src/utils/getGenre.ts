@@ -1,4 +1,4 @@
-
+import { GenreResponse } from "@/types";
 import { config } from "./config";
 
 export const getGenre = async () => {
@@ -10,7 +10,7 @@ export const getGenre = async () => {
 
     const genres = await response.json();
 
-    return genres;
+    return genres as GenreResponse;
   } catch (error) {
     console.log(error);
   }

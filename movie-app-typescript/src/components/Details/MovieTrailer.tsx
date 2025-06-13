@@ -15,7 +15,7 @@ export const Trailer = ({ movie }: TrailerProps) => {
       <div className="relative ">
         <img
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-          className="md:h-[530px]  md:w-[1200px]  rounded-lg object-cover"
+          className="md:h-[530px]  md:w-[1300px]  rounded-lg object-cover"
         />
         <div className="absolute bottom-5 left-5">
           <MovieTrailer movieId={movie.id} />

@@ -27,9 +27,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
           <p className="text-gray-500">/10</p>
         </div>
         <div>
-          <h2 className=" h-[40px] text-md font-medium pl-2">
-            {movie?.title}
-          </h2>
+          <h2 className=" h-[40px] text-md font-medium pl-2">{movie?.title}</h2>
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import { MovieDetails } from "@/components/Details/MovieDetails";
-import GenrePage from "@/components/Genre/GenrePage";
+import GenrePage from "@/app/turul/_components/Genre/GenrePage";
 
-const Page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
-  const { movieId } = await params;
+const Page = async ({ params }: { params: Promise<{ genreId: string }> }) => {
+  const { genreId } = await params;
 
   return (
     <div>
-      <GenrePage movieId={Number(movieId)} />
+      <GenrePage genreId={genreId} />
     </div>
   );
 };

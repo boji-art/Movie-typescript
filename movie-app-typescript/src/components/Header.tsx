@@ -1,6 +1,6 @@
 import { Film } from "lucide-react";
 import Link from "next/link";
-import { Genre1 } from "./Genre/Genre1";
+import { Genre1 } from "../app/turul/_components/Genre/Genre1";
 import { HeaderSearch } from "./HeaderSearch";
 import { ModeToggle } from "./ModeToggle";
 
@@ -15,10 +15,8 @@ export const Header = () => {
         <p className=" text-indigo-700 font-bold italic text-lg">Movie Z</p>
 
         <div className="flex items-center justify-between">
-          <Genre1 />
-          <div className=" md:flex gap-[12px] ">
-            <HeaderSearch />
-          </div>
+          {/* <Genre1 genreId={genreId}/> */}
+          <div className=" md:flex gap-[12px] ">{/* <HeaderSearch /> */}</div>
 
           <div className="flex gap-3   ">
             {/* <Button variant="outline" className="flex gap-3 md:hidden">

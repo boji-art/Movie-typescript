@@ -14,6 +14,10 @@ export type Genre = {
   name: string;
 };
 
+export type GenreResponse = {
+  genres: Genre[];
+};
+
 export type Movie = {
   adult: boolean;
   backdrop_path: string;
@@ -62,7 +66,7 @@ export type MovieTrailerType = {
   name: string;
   key: string;
 };
-export type VideoType={
+export type VideoType = {
   id: string;
   key: string;
   name: string;
@@ -70,8 +74,8 @@ export type VideoType={
   type: string;
   official: boolean;
   published_at: string;
-}
-export type VideoResponse= {
+};
+export type VideoResponse = {
   id: number;
   results: VideoType[];
-}
+};

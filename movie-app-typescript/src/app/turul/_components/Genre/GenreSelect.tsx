@@ -4,12 +4,18 @@ import { getGenre } from "@/utils/getGenre";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export const GenreSelect = ({ genreId }:{genreId:string}) => {
+type GenreSelectProps = {
+  genreId: number | null;
+};
+
+export const GenreSelect = ({ genreId }: GenreSelectProps) => {
   const [genres, setGenres] = useState<Genre[]>([]);
 
   useEffect(() => {
     const genress = async () => {
       const response = await getGenre();
+
+      if (!response) return;
 
       setGenres(response?.genres);
     };
@@ -18,13 +24,13 @@ export const GenreSelect = ({ genreId }:{genreId:string}) => {
 
   return (
     <div className="h-[200px] w-[400px] p-2 flex flex-wrap gap-2">
-      {genres.map((genre) => (
+      {genres?.map((genre) => (
         <Link key={genre?.id} href={`/turul/${genre?.id}`}>
           <Button
             key={genre.id}
-            variant={genreId === String(genre?.id) ? "default" : "outline"}
+            variant={genreId === genre?.id ? "default" : "outline"}
           >
-            {genre?.name}{" "}
+            {genre?.name}
           </Button>
         </Link>
       ))}
